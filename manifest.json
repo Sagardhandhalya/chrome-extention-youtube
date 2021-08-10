@@ -1,0 +1,28 @@
+{
+    "name": "Audio Only Youtube",
+    "version": "0.8.2",
+    "manifest_version": 2,
+    "icons": {
+        "19": "img/icon19.png",
+        "38": "img/icon38.png",
+        "48": "img/icon48.png",
+        "128": "img/icon128.png"
+      },
+      "permissions": [
+        "tabs",
+        "*://www.youtube.com/*",
+        "*://music.youtube.com/*",
+        "*://*.googlevideo.com/*"
+      ],
+     
+      "content_scripts": [
+        {
+          "matches": ["*://www.youtube.com/*", "*://music.youtube.com/*"],
+          "js": ["js/content-script.js"],
+          "css": ["css/content-script.css"],
+          "run_at": "document_end",
+          "all_frames": true
+        }
+      ],
+      "options_page": "html/options.html"
+    }
